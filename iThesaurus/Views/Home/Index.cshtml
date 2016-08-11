@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/thesaurus")
+}
+
+<div ng-controller="ThesaurusController">
+    <div class="jumbotron">
+        <h1>iThesaurus</h1>
+        <p class="lead">Welcome to iThesaurus. This app is built using WebApi, EF6 and AngularJS. It also uses multi-tier Domain-Drive-Design, Unity IoC and Unit Tests. </p>
+        <p><a href="http://linkedin.com/in/singh-vaibhav" class="btn btn-primary btn-lg">Visit my profile &raquo;</a></p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Getting started</h2>
+            <p>
+                The thesaurus contains a repository of words with its synonyms. Here, you can look up words and add synonyms to it.
+            </p>
+
+        </div>
+        <div class="col-md-4">
+            <h2>Search a word</h2>
+            <input type="text" name="Search" ng-model="wordSearch" />
+            <p><a class="btn btn-default" href="" ng-click="getSynonyms(wordSearch)">Search &raquo;</a></p>
+
+            <div ng-show="displaySynonyms">
+                <h3>Synonyms for: <em><i>{{wordSearch}}</i></em></h3>
+                <display-synonyms synonyms="synonyms"
+                                  show-Add-New-Synonym="showAddNewSynonym"
+                                  add-New-Synonym="addSynonym(synonym)"
+                                  get-Synonyms="getSynonyms(word)"></display-synonyms>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <p><a class="btn btn-default" href="" ng-click="getAllWords()">Get all words &raquo;</a></p>
+            <span ng-repeat="word in words">{{word}}{{$last ? '' : ', '}}</span>
+        </div>
+    </div>
+</div>
+<br />

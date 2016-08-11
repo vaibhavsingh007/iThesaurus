@@ -1,0 +1,13 @@
+﻿<div>
+    <div ng-repeat="synonym in synonyms">
+        <a style="font-size: 26px;" href="" ng-click="getSynonyms({word:synonym})">{{synonym}}</a>
+    </div>
+    <a href="" ng-click="showAddNewSynonym = !showAddNewSynonym">Add new synonym</a>
+    <div ng-show="showAddNewSynonym">
+        <input title="PS: Word will be added automatically if it does not already exist." 
+               placeholder="Type a synonym."
+               type="text" ng-model="newSynonym" />
+        <input type="button" ng-click="addNewSynonym({synonym:newSynonym})" value="Add" />
+    </div>
+</div>
+
