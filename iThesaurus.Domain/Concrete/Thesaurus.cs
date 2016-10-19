@@ -38,6 +38,8 @@ namespace iThesaurus.Domain.Concrete
                 {
                     // Check if synonym already exists as a word.
                     // Must avoid redundancy. 
+                    // PS: TODO - Pull DB call out of the loop. It is better to load all the 
+                    //..required data in the memory before entering the loop to avoid a performance hit.
                     var synonym = _wordsRepo.Find(newSynonym);
 
                     if (synonym == null)
