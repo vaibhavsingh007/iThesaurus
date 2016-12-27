@@ -1,8 +1,5 @@
-packages/angularjs.1.5.6/content/Scripts/i18n/
-iThesaurus.Data/bin/
-iThesaurus.Data/obj/
-iThesaurus.Domain/bin/
-iThesaurus.Domain/obj/
-iThesaurus.Tests/bin/
-iThesaurus/Scripts/i18n/
-iThesaurus/bin/
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/iThesaurus/bin
