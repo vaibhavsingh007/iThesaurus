@@ -9,7 +9,7 @@ app.controller("ThesaurusController", ["$scope", "CommunicationService", functio
         commService.getSynonyms(word).then(function (result) {
             $scope.displaySynonyms = true;
 
-            if (result.length == 0) {
+            if (result.length === 0) {
                 alert("No synonyms found!");
                 $scope.synonyms = [];
                 $scope.showAddNewSynonym = true;
